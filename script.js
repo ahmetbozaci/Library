@@ -6,8 +6,8 @@ function Book(name, author){
 }
 
 function addLibrary(){
-  book_name = prompt("Write a book name")
-  book_author = prompt("Write a book author")
+  book_name = document.getElementById("newBookName");
+  book_author = document.getElementById("newBookAuthor");
   let book = new Book(book_name,book_author)
   library.push(book)
 }

@@ -13,13 +13,60 @@
   <h1>Library</h1>
   <form>
     <div class="mb-3">
-      <input type="text" class="form-control" placeholder="Book name">
+      <input type="text" class="form-control" id="newBookName" placeholder="Book name">
     </div>
     <div class="mb-3">
-      <input type="text" class="form-control" placeholder="Author">
+      <input type="text" class="form-control" id="newBookAuthor" placeholder="Author">
+    </div>
+    <div class="mb-3">
+      <input type="text" class="form-control" placeholder="Number of pages">
+    </div>
+
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+      <label class="form-check-label" for="flexRadioDefault1">
+        yes I have read
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+      <label class="form-check-label" for="flexRadioDefault2">
+        No I have not read
+      </label>
     </div>
   
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" onclick="addlibrary()"class="btn btn-primary">Add book</button>
   </form>
+
+  <h2>SAVED BOOKS ARE HERE</h2>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">Name</th>
+        <th scope="col">Author</th>
+        <th scope="col">Pages read</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+    
+      </tr>
+    </tbody>
+  </table>
 </body>
 </html>
