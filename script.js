@@ -14,6 +14,6 @@ function addLibrary(){
 addLibrary()
 
 for(let i=0; i<library.length; i++){
- console.table(library[0])
+ console.table(library[i])
   
 }
