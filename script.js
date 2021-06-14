@@ -6,14 +6,16 @@ function Book(name, author){
 }
 
 function addLibrary(){
-  book_name = document.getElementById("newBookName");
-  book_author = document.getElementById("newBookAuthor");
+  let book_name = document.getElementById("newBookName").value;
+  let book_author = document.getElementById("newBookAuthor").value;
   let book = new Book(book_name,book_author)
   library.push(book)
 }
-addLibrary()
+//addLibrary()
 
-for(let i=0; i<library.length; i++){
- console.table(library[i])
+// for(let i=0; i<library.length; i++){
+//  console.table(library[i])
   
-}
+// }
+
+console.table(library)
