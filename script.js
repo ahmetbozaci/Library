@@ -1,4 +1,4 @@
-let library = []
+let library = [{name:"Digital Fortress", author:"Dan Brown"},{name:"Improbable", author:"Adam Fawer"}]
 
 function Book(name, author){
   this.name =  name;
@@ -12,4 +12,8 @@ function addLibrary(){
   library.push(book)
 }
 addLibrary()
-console.log(library)
+
+for(let i=0; i<library.length; i++){
+ console.table(library[0])
+  
+}
