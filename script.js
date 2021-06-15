@@ -13,14 +13,7 @@ function addLibrary(){
   var pages_read =  parseInt(document.getElementById("pages").value);
   let read_status = ""
   
-  //  let read_status = read_status_no.checked ? "no" : "yes"
-   var ele = document.getElementsByName('Status');
-              
-   for(i = 0; i < ele.length; i++) {
-       if(ele[i].checked)
-      
-              read_status = ele[i].value;
-   }
+
   
   let book = new Book(book_name,book_author,pages_read,read_status);
   library.push(book)
