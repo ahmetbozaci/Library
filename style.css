@@ -1,15 +1,15 @@
-.container{
-    padding: 100px;
-    border-radius: 2px;
-    border-style: solid;
-    border-color: grey;
+.container {
+  padding: 100px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: grey;
 }
 
-h2{
-    font-size: 25px;
-    color: rgb(61, 61, 238);
+h2 {
+  font-size: 25px;
+  color: rgb(61, 61, 238);
 }
 
-.LibraryTitle{
-    padding-top: 30px;
+.LibraryTitle {
+  padding-top: 30px;
 }
