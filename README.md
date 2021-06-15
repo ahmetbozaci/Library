@@ -1,19 +1,37 @@
 LIBRARY
 
-## Live Version
 
-Click on the link to see  [live version]()
+In this project we created a simple library website, where you can add books to the library, remove books, and set the books that you have to read.
 
 
 ### Built With
 
 ![HTML](https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white)
-<!-- ![BOOTSTRAP](https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white) -->
+![BOOTSTRAP](https://img.shields.io/badge/bootstrap%20-%23563D7C.svg?&style=for-the-badge&logo=bootstrap&logoColor=white) 
 ![JAVASCRIPT](https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E")
 
-### Setup
+## Getting Started
 
+## To get local copy up and running follow these simple example steps
+
+```
+git clone https://github.com/ahmetbozaci/Library.git
+```
+
+```
+cd Library
+```
+### Prerequisites
+
+- Node
+
+### Setup
+```run `npm install` to install all required node modules
+
+### Usage
+
+double click on  `index.html` to open project in new browser window
 
 ## Authors
 
