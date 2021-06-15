@@ -34,7 +34,7 @@ for(let i=0; i<library.length; i++){
 }
 
 //Insert data function
-function Insert_Data() {
+function insert_Data() {
   var table = document.getElementById("datas");
   table.innerHTML="";
   var tr="";
@@ -48,6 +48,8 @@ function Insert_Data() {
   table.innerHTML+=tr;
 
 }
+
+
 // remove book 
 function removeBook(r) {
   let i = r.parentNode.parentNode.rowIndex;
@@ -57,4 +59,5 @@ function removeBook(r) {
 function changeStatus(r){
   let i = r.parentNode.parentNode.rowIndex;
   library[i-1].status = "Read"
+  insert_Data()
 }
