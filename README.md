@@ -3,6 +3,7 @@ LIBRARY
 
 In this project we created a simple library website, where you can add books to the library, remove books, and set the books that you have to read.
 
+![screenshot](assets/library-app.png)
 
 ### Built With
 
