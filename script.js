@@ -40,10 +40,19 @@ function Insert_Data() {
   var tr="";
   library.forEach(x=>{
      tr+='<tr>';
-     tr+='<td>'+x.name+'</td>'+'<td>'+x.author+'</td>'+'<td>'+x.pages+'</td>'+'<td>'+x.status+'</td>'
+     tr+='<td>'+x.name+'</td>'+'<td>'+x.author+'</td>'+'<td>'+x.pages+'</td>'+'<td>'+x.status+'</td>'+
+     '<td>'+"<button onclick='removeBook(this)'>Remove</button>"+'</td>'
      tr+='</tr>'
 
   })
   table.innerHTML+=tr;
-  //Help......  
+
+}
+// remove book 
+function removeBook(r) {
+  console.log(i)
+  var i = r.parentNode.parentNode.rowIndex;
+
+  library.splice(i-1,1)
+  document.getElementById("myTable").deleteRow(i);
 }
