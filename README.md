@@ -43,7 +43,7 @@ double click on  `index.html` to open project in new browser window
 
 👤 **Stephanie Sakuhuni**
 - GitHub: [@stephanie041996](https://github.com/Stephanie041996)
-- LinkedIn: [Stephanie Sakuhuni](www.linkedin.com/in/stephanie-michelle-sakuhuni) 
+- LinkedIn: [@Stephanie Sakuhuni](https://www.linkedin.com/in/stephanie-michelle-sakuhuni/) 
 
 ## 🤝 Contributing
 
