@@ -1,56 +1,42 @@
-let library = [{name:"Digital Fortress", author:"Dan Brown"},{name:"Improbable", author:"Adam Fawer"}]
+const library = [];
 
-function Book(name, author, pages, status){
-  this.name =  name;
+function Book(name, author, pages, status) {
+  this.name = name;
   this.author = author;
   this.pages = pages;
   this.status = status;
 }
 
-function addLibrary(){
-  let book_name = document.getElementById("newBookName").value;
-  let book_author = document.getElementById("newBookAuthor").value;
-  var pages_read =  parseInt(document.getElementById("pages").value);
-  let read_status = ""
-  
-
-  
-  let book = new Book(book_name,book_author,pages_read,read_status);
-  library.push(book)
-  console.log(library)
-}
-//addLibrary()
-
-for(let i=0; i<library.length; i++){
- console.table(library[i])
-  
+function addLibrary() {
+  const bookName = document.getElementById('newBookName').value;
+  const bookAuthor = document.getElementById('newBookAuthor').value;
+  const pagesRead = document.getElementById('pages').value;
+  const readStatus = '';
+  const book = new Book(bookName, bookAuthor, pagesRead, readStatus);
+  library.push(book);
 }
 
-//Insert data function
-function insert_Data() {
-  var table = document.getElementById("datas");
-  table.innerHTML="";
-  var tr="";
-  library.forEach(x=>{
-     tr+='<tr>';
-     tr+='<td>'+x.name+'</td>'+'<td>'+x.author+'</td>'+'<td>'+x.pages+'</td>'+'<td>'+x.status+'</td>'+
-     '<td>'+"<button onclick='changeStatus(this)'>Read</button>"+'</td>'+'<td>'+"<button onclick='removeBook(this)'>Remove</button>"+'</td>'+'</td>'
-     tr+='</tr>'
-
-  })
-  table.innerHTML+=tr;
-
+// Insert data function
+function insertData() {
+  const table = document.getElementById('datas');
+  table.innerHTML = '';
+  let tr = '';
+  library.forEach((x) => {
+    tr += '<tr>';
+    tr += `<td> ${x.name} </td> <td>${x.author}</td><td>${x.pages}</td> <td>${x.status}</td> <td><button onclick="changeStatus(this)">Read</button></td><td><button onclick="removeBook(this)">Remove</button></td></td>`;
+    tr += '</tr>';
+  });
+  table.innerHTML += tr;
 }
 
-
-// remove book 
+// remove book
 function removeBook(r) {
-  let i = r.parentNode.parentNode.rowIndex;
-  library.splice(i-1,1)
-  document.getElementById("myTable").deleteRow(i);
+  const index = r.parentNode.parentNode.rowIndex;
+  library.splice(index - 1, 1);
+  document.getElementById('myTable').deleteRow(index);
 }
-function changeStatus(r){
-  let i = r.parentNode.parentNode.rowIndex;
-  library[i-1].status = "Read"
-  insert_Data()
+function changeStatus(r) {
+  const index = r.parentNode.parentNode.rowIndex;
+  library[index - 1].status = 'Read';
+  insertData();
 }
