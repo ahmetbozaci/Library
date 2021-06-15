@@ -1,6 +1,6 @@
 let library = [{name:"Digital Fortress", author:"Dan Brown"},{name:"Improbable", author:"Adam Fawer"}]
 
-function Book(name, author){
+function Book(name, author, pages, status){
   this.name =  name;
   this.author = author;
   this.pages = pages;
@@ -10,11 +10,21 @@ function Book(name, author){
 function addLibrary(){
   let book_name = document.getElementById("newBookName").value;
   let book_author = document.getElementById("newBookAuthor").value;
-  let pages_read =  parseInt(document.getElementById("pages").value);
-  let read_status = document.getElementById("status").value;
+  var pages_read =  parseInt(document.getElementById("pages").value);
+  let read_status = ""
+  
+  //  let read_status = read_status_no.checked ? "no" : "yes"
+   var ele = document.getElementsByName('Status');
+              
+   for(i = 0; i < ele.length; i++) {
+       if(ele[i].checked)
+      
+              read_status = ele[i].value;
+   }
+  
   let book = new Book(book_name,book_author,pages_read,read_status);
   library.push(book)
-  console.log
+  console.log(library)
 }
 //addLibrary()
 
