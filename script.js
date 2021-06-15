@@ -41,7 +41,7 @@ function Insert_Data() {
   library.forEach(x=>{
      tr+='<tr>';
      tr+='<td>'+x.name+'</td>'+'<td>'+x.author+'</td>'+'<td>'+x.pages+'</td>'+'<td>'+x.status+'</td>'+
-     '<td>'+"<button onclick='removeBook(this)'>Remove</button>"+'</td>'
+     '<td>'+"<button onclick='changeStatus(this)'>Read</button>"+'</td>'+'<td>'+"<button onclick='removeBook(this)'>Remove</button>"+'</td>'+'</td>'
      tr+='</tr>'
 
   })
@@ -50,9 +50,11 @@ function Insert_Data() {
 }
 // remove book 
 function removeBook(r) {
-  console.log(i)
-  var i = r.parentNode.parentNode.rowIndex;
-
+  let i = r.parentNode.parentNode.rowIndex;
   library.splice(i-1,1)
   document.getElementById("myTable").deleteRow(i);
+}
+function changeStatus(r){
+  let i = r.parentNode.parentNode.rowIndex;
+  library[i-1].status = "Read"
 }
