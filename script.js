@@ -7,24 +7,22 @@ function Book(name, author, pages, status) {
   this.status = status;
 }
 
-function addLibrary(){
-  let book_name = document.getElementById("newBookName").value;
-  let book_author = document.getElementById("newBookAuthor").value;
-  var pages_read =  parseInt(document.getElementById("pages").value);
-  let read_status = ""
+function addLibrary() {
+  const book_name = document.getElementById('newBookName').value;
+  const book_author = document.getElementById('newBookAuthor').value;
+  const pages_read = parseInt(document.getElementById('pages').value);
+  let readStatus = '';
 
   //  let read_status = read_status_no.checked ? "no" : "yes"
-   var ele = document.getElementsByName('Status');
+  const ele = document.getElementsByName('Status');
 
-   for(i = 0; i < ele.length; i++) {
-       if(ele[i].checked)
+  for (let i = 0; i < ele.length; i++) {
+    if (ele[i].checked) readStatus = ele[i].value;
+  }
 
-              read_status = ele[i].value;
-   }
-
-  let book = new Book(book_name,book_author,pages_read,read_status);
-  library.push(book)
-  console.log(library)
+  const book = new Book(book_name, book_author, pages_read, readStatus);
+  library.push(book);
+  console.log(library);
 }
 
 // Insert data function
@@ -49,12 +47,10 @@ function removeBook(r) {
 
 function changeStatus(r) {
   const index = r.parentNode.parentNode.rowIndex;
-if (library[index -1].status =='Unread'){
-  library[index - 1].status = 'Read';
-}
-  else{
-  library[index - 1].status = 'Unread';
- }
- insertData();
-
+  if (library[index - 1].status == 'Unread') {
+    library[index - 1].status = 'Read';
+  } else {
+    library[index - 1].status = 'Unread';
+  }
+  insertData();
 }
