@@ -7,13 +7,24 @@ function Book(name, author, pages, status) {
   this.status = status;
 }
 
-function addLibrary() {
-  const bookName = document.getElementById('newBookName').value;
-  const bookAuthor = document.getElementById('newBookAuthor').value;
-  const pagesRead = document.getElementById('pages').value;
-  const readStatus = '';
-  const book = new Book(bookName, bookAuthor, pagesRead, readStatus);
-  library.push(book);
+function addLibrary(){
+  let book_name = document.getElementById("newBookName").value;
+  let book_author = document.getElementById("newBookAuthor").value;
+  var pages_read =  parseInt(document.getElementById("pages").value);
+  let read_status = ""
+
+  //  let read_status = read_status_no.checked ? "no" : "yes"
+   var ele = document.getElementsByName('Status');
+
+   for(i = 0; i < ele.length; i++) {
+       if(ele[i].checked)
+
+              read_status = ele[i].value;
+   }
+
+  let book = new Book(book_name,book_author,pages_read,read_status);
+  library.push(book)
+  console.log(library)
 }
 
 // Insert data function
