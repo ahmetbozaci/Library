@@ -34,7 +34,7 @@ function insertData() {
   let tr = '';
   library.forEach((x) => {
     tr += '<tr>';
-    tr += `<td> ${x.name} </td> <td>${x.author}</td><td>${x.pages}</td> <td>${x.status}</td> <td><button onclick="changeStatus(this)">Read</button></td><td><button onclick="removeBook(this)">Remove</button></td></td>`;
+    tr += `<td> ${x.name} </td> <td>${x.author}</td><td>${x.pages}</td> <td>${x.status}</td> <td><button onclick="changeStatus(this)">Status</button></td><td><button onclick="removeBook(this)">Remove</button></td></td>`;
     tr += '</tr>';
   });
   table.innerHTML += tr;
@@ -46,8 +46,15 @@ function removeBook(r) {
   library.splice(index - 1, 1);
   document.getElementById('myTable').deleteRow(index);
 }
+
 function changeStatus(r) {
   const index = r.parentNode.parentNode.rowIndex;
+if (library[index -1].status =='Unread'){
   library[index - 1].status = 'Read';
-  insertData();
+}
+  else{
+  library[index - 1].status = 'Unread';
+ }
+ insertData();
+
 }
