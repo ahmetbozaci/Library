@@ -8,19 +8,18 @@ function Book(name, author, pages, status) {
 }
 
 function addLibrary() {
-  const book_name = document.getElementById('newBookName').value;
-  const book_author = document.getElementById('newBookAuthor').value;
-  const pages_read = parseInt(document.getElementById('pages').value);
+  const bookName = document.getElementById('newBookName').value;
+  const bookAuthor = document.getElementById('newBookAuthor').value;
+  const pagesRead = document.getElementById('pages').value;
   let readStatus = '';
 
-  //  let read_status = read_status_no.checked ? "no" : "yes"
   const ele = document.getElementsByName('Status');
 
-  for (let i = 0; i < ele.length; i++) {
+  for (let i = 0; i < ele.length; i += 1) {
     if (ele[i].checked) readStatus = ele[i].value;
   }
 
-  const book = new Book(book_name, book_author, pages_read, readStatus);
+  const book = new Book(bookName, bookAuthor, pagesRead, readStatus);
   library.push(book);
   console.log(library);
 }
@@ -47,7 +46,7 @@ function removeBook(r) {
 
 function changeStatus(r) {
   const index = r.parentNode.parentNode.rowIndex;
-  if (library[index - 1].status == 'Unread') {
+  if (library[index - 1].status === 'Unread') {
     library[index - 1].status = 'Read';
   } else {
     library[index - 1].status = 'Unread';
