@@ -7,25 +7,54 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <script src="script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <title>Library</title>
 </head>
 <body class="container">
-  <h1>Add Book To Library</h1>
-  <form>
-    <div class="mb-3">
-      <input type="text" id="newBookName" placeholder="Book name">
+  <div class="text-center">
+    <h1>LIBRARY</h1>
+    <br>
+    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModalCenter">
+      Add New Book
+    </button>
+      
+  </div>
+ 
+  <div>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="text-center">NEW BOOK</h1>
+          </div>
+          <div class="modal-body justify-content-center">
+            <form class="text-center"> 
+              <div class="mb-3">
+                <input type="text" id="newBookName" placeholder="Book name">
+              </div>
+              <div class="mb-3">
+                <input type="text"  id="newBookAuthor" placeholder="Author name">
+              </div>
+              <div class="mb-3">
+                <input type="number" id="pages" placeholder="250">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" value="Submit" id="button2" onclick="addLibrary(); insertData()" class="btn btn-primary">Add book</button>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="mb-3">
-      <input type="text"  id="newBookAuthor" placeholder="Author name">
-    </div>
-    <div class="mb-3">
-      <input type="number" id="pages" placeholder="250">
-    </div>
-   <button type="button" value="Submit" id="button2" onclick="addLibrary(); insertData()" class="btn btn-primary">Add book</button>
-  </form>
-<br>
-  <h2 class="LibraryTitle">SAVED BOOKS ARE HERE</h2>
 
+    
+  </div>
+
+  <br>
+  <h2 class="LibraryTitle">SAVED BOOKS ARE HERE</h2>
   <table class="table" id="myTable">
     <thead>
       <tr>
