@@ -1,14 +1,14 @@
 const library = [];
-
-// function Book(name, author, pages, status) {
-//   this.name = name;
-//   this.author = author;
-//   this.pages = pages;
-//   this.status = status;
-// }
 const book = (name, author, pages, status) => {
-  return {name, author, pages, status}
-}
+  return {
+    name,
+    author,
+    pages,
+    status,
+  };
+};
+
+// Add book to library
 const addLibrary = () => {
   const bookName = document.getElementById('newBookName').value;
   const bookAuthor = document.getElementById('newBookAuthor').value;
@@ -16,17 +16,15 @@ const addLibrary = () => {
   let readStatus = '';
 
   const ele = document.getElementsByName('Status');
-
   for (let i = 0; i < ele.length; i += 1) {
     if (ele[i].checked) readStatus = ele[i].value;
   }
-  const newBook = book(bookName, bookAuthor, pagesRead, readStatus)
-  //const book = new Book(bookName, bookAuthor, pagesRead, readStatus);
+  const newBook = book(bookName, bookAuthor, pagesRead, readStatus);
   library.push(newBook);
-}
+};
 
-// Insert data function
-function insertData() {
+// Insert data to table
+const insertData = () => {
   const table = document.getElementById('datas');
   table.innerHTML = '';
   let tr = '';
@@ -36,16 +34,16 @@ function insertData() {
     tr += '</tr>';
   });
   table.innerHTML += tr;
-}
+};
 
 // remove book
-function removeBook(r) {
+const removeBook = (r) => {
   const index = r.parentNode.parentNode.rowIndex;
   library.splice(index - 1, 1);
   document.getElementById('myTable').deleteRow(index);
-}
-
-function changeStatus(r) {
+};
+// change status
+const changeStatus = (r) => {
   const index = r.parentNode.parentNode.rowIndex;
   if (library[index - 1].status === 'Unread') {
     library[index - 1].status = 'Read';
@@ -53,4 +51,4 @@ function changeStatus(r) {
     library[index - 1].status = 'Unread';
   }
   insertData();
-}
+};
