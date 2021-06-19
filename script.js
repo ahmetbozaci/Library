@@ -1,10 +1,13 @@
 const library = [];
 
-function Book(name, author, pages, status) {
-  this.name = name;
-  this.author = author;
-  this.pages = pages;
-  this.status = status;
+// function Book(name, author, pages, status) {
+//   this.name = name;
+//   this.author = author;
+//   this.pages = pages;
+//   this.status = status;
+// }
+const book = (name, author, pages, status) => {
+  return {name, author, pages, status}
 }
 
 function addLibrary() {
@@ -18,10 +21,9 @@ function addLibrary() {
   for (let i = 0; i < ele.length; i += 1) {
     if (ele[i].checked) readStatus = ele[i].value;
   }
-
-  const book = new Book(bookName, bookAuthor, pagesRead, readStatus);
-  library.push(book);
-  console.log(library);
+  const newBook = book(bookName, bookAuthor, pagesRead, readStatus)
+  //const book = new Book(bookName, bookAuthor, pagesRead, readStatus);
+  library.push(newBook);
 }
 
 // Insert data function
