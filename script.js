@@ -9,8 +9,7 @@ const library = [];
 const book = (name, author, pages, status) => {
   return {name, author, pages, status}
 }
-
-function addLibrary() {
+const addLibrary = () => {
   const bookName = document.getElementById('newBookName').value;
   const bookAuthor = document.getElementById('newBookAuthor').value;
   const pagesRead = document.getElementById('pages').value;
