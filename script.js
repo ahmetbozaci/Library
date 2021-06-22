@@ -1,15 +1,13 @@
 const library = [];
-const book = (name, author, pages, status) => {
-  return {
-    name,
-    author,
-    pages,
-    status,
-  };
-};
-
-// Add book to library
-const addLibrary = () => {
+class Book {
+  constructor(name, author, pages, status) {
+    this.name = name;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
+}
+function addLibrary() {
   const bookName = document.getElementById('newBookName').value;
   const bookAuthor = document.getElementById('newBookAuthor').value;
   const pagesRead = document.getElementById('pages').value;
@@ -19,9 +17,9 @@ const addLibrary = () => {
   for (let i = 0; i < ele.length; i += 1) {
     if (ele[i].checked) readStatus = ele[i].value;
   }
-  const newBook = book(bookName, bookAuthor, pagesRead, readStatus);
+  const newBook = new Book(bookName, bookAuthor, pagesRead, readStatus);
   library.push(newBook);
-};
+}
 
 // Insert data to table
 const insertData = () => {
